@@ -1,0 +1,41 @@
+<h1>Hello card page</h1>
+
+<div id="card">
+    {{#if card.books.length}}
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Count</th>
+                <th>Total price</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            {{#each card.books}}
+            <tr>
+                <td>{{name}}</td>
+                <td class="price">{{price}}</td>
+                <td class="count">{{count}}</td>
+                <td class="count_price"></td>
+                <td>
+                    <button id="{{id}}" data-id="{{id}}" class="btn remove-btn"
+                        style="background-color: red;">Delete</button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+
+        <tr>
+            <td class="total">{{card.price}}</td>
+        </tr>
+    </table>
+    {{else}}
+    <h2>Card is empty</h2>
+    {{/if}}
+</div>
+
+
+<script src="/scripts/script.js"></script>
